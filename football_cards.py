@@ -1,0 +1,23 @@
+team_a = [f"A-{num}" for num in range(1, 11 + 1)]
+team_b = [f"B-{num}" for num in range(1, 11 + 1)]
+
+was_terminated = False
+command = input().split()
+
+
+for player in command:
+
+    if player in team_a:
+        team_a.remove(player)
+
+    elif player in team_b:
+        team_b.remove(player)
+
+    if len(team_a) < 7 or len(team_b) < 7:
+        was_terminated = True
+        break
+
+print(f'Team A - {len(team_a)}; Team B - {len(team_b)}')
+if was_terminated:
+    print("Game was terminated")
+
