@@ -1,23 +1,23 @@
-def formating(command:str ,some_target: str)-> None:
+def formating(command:str)-> None:
 
     if command == "int":
-        result = int(some_target) * 2
+        target = int(input())
+        result = target * 2
         print(result)
 
     elif command == "real":
-        result = int(some_target) * 1.5
+        target = float(input())
+        result = target * 1.5
         print("{:.2f}".format(result))
 
     elif command == "string":
-        result = f"${some_target}$"
+        target = input()
+        result = f"${target}$"
         print(result)
 
 
 def main():
     command_input = input()
-    target = input()
 
-    formating(command_input, target)
-
-
+    formating(command_input)
 main()
